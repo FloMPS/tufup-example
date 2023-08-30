@@ -25,7 +25,7 @@ if __name__ == '__main__':
     repo = Repository.from_config()
 
     # Add new app bundle to repository (automatically reads myapp.__version__)
-    repo.add_bundle(new_bundle_dir=bundle_dir)
+    repo.add_bundle(new_bundle_dir=bundle_dir, skip_patch=True)
     repo.publish_changes(private_key_dirs=[KEYS_DIR])
 
     print('Done.')
